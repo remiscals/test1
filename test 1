@@ -1,0 +1,46 @@
+def playRandomOnce():
+    import random
+    randomPlay = random.randrange(1,4)
+    if (randomPlay == 1):
+        computerPlay = "Paper"
+    if (randomPlay == 2):
+        computerPlay = "Scissor"
+    if (randomPlay == 3):
+        computerPlay = "Rock"
+    return(computerPlay)
+
+def playOnce():
+    wins = []
+    games = []
+    ties = []
+    
+    computerPlay1 = playRandomOnce()
+    computerPlay2 = playRandomOnce()
+    
+    print("Computer 1 plays:", computerPlay1 , "while Computer 2 plays:", computerPlay2)
+    
+    userDecision = input ("who won? 1 or 2; 3 if tie, 4 to end")
+    if(int(userDecision) == 1):
+        print("Computer 1 wins!")
+        wins.append('1')
+        print("Games Won:", (wins))
+    
+    if(int(userDecision) == 2):
+        print("Computer 2 wins!")
+    
+    if(int(userDecision) == 3):
+        print("Tie!")
+        ties.append('1')
+        print("Games Tied:", (ties))
+    if(int(userDecision) == 4):
+        quit()
+    
+    if(int(userDecision) == 1) or int(userDecision) == 2 or int(userDecision) == 3:
+        games.append('1')
+        print("Games Played:", (games))
+   
+        
+def playNTimes():
+    return(playOnce())
+
+print(playNTimes())
